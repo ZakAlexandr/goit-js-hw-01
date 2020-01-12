@@ -1,33 +1,15 @@
 //task-05
+
+// Напиши функцию checkForSpam(message), принимающую 1 параметр message - строку. Функция проверяет ее на содержание слов spam и sale. Если нашли зарещенное слово то функция возвращает true, если запрещенных слов нет функция возвращает false. Слова в строке могут быть в произвольном регистре.
+
 'use strict';
 
-let message;
-let price;
-
-const country = prompt('Введите вашу страну');
-
-switch (country.toLowerCase()) {
-    case 'китай':
-        price = 100;
-        break;
-    case 'чили':
-        price = 250;
-        break;
-    case 'австралия':
-        price = 170;
-        break;
-    case 'индия':
-        price = 80;
-        break;
-    case 'ямайка':
-        price = 120;
-        break;
-    default:
-        price = null;
+function checkForSpam(string) {
+    return (string.toLowerCase().includes('sale') || string.toLowerCase().includes('spam'));
 }
+    
+console.log(checkForSpam('Latest technology news'));
+console.log(checkForSpam('JavaScript weekly newsletter'));
+console.log(checkForSpam('Get best sale offers now!'));
+console.log(checkForSpam('[SPAM] How to earn fast money?'));
 
-message = price
-    ? `Доставка в ${country} будет стоить ${price} кредитов`
-    : 'В вашей стране доставка не доступна';
-
-console.log(message);

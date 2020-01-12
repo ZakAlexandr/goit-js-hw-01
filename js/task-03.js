@@ -1,16 +1,18 @@
 //task-03
+// Напиши фукцнию findLongestWord(string), которая принимает параметром произвольную строку (в строке будут только слова и пробелы) и возвращает самое длинное слово в этой строке.
 'use strict';
 
-const ADMIN_PASSWORD = 'jqueryismyjam';
-let message;
+function findLongestWord(string) {
+    let stringArray = string.split(' ');
+    let longestWord = stringArray[0];
+    for (let i = 1; i < stringArray.length; i++) {
+        if (stringArray[i].length > longestWord.length) {
+            longestWord = stringArray[i];
+        }
+    }
+    return longestWord
+}
 
-let password = prompt('Введите ваш пароль');
-
-message =
-    password == null
-        ? 'Отменено пользователем!'
-        : password === ADMIN_PASSWORD
-        ? 'Добро пожаловать!'
-        : 'Доступ запрещен, неверный пароль!';
-
-alert(message);
+console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
+console.log(findLongestWord('Google do a roll'));
+console.log(findLongestWord('May the force be with you'));

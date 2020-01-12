@@ -1,21 +1,15 @@
 //task-04
 'use strict';
 
-let credits = 23580;
-let pricePerDroid = 3000;
-
-let number = prompt('Введите количество дроидов');
-let message;
-
-if (number == null) {
-    message = 'Отменено пользователем';
-} else {
-    let totalPrice = Number(number) * pricePerDroid;
-    let canBuy = totalPrice <= credits;
-    credits -= canBuy ? totalPrice : 0;
-    message = canBuy
-        ? `Вы купили ${number} дроидов, на счету осталось ${credits} кредитов`
-        : 'Недостаточно средств на счету!';
+function formatString(string) {
+    return string.length >= 40 ? `${string.slice(0, 40) + ' ...'}` : `${string}`;
 }
 
-console.log(message);
+console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+console.log(formatString('Curabitur ligula sapien.'));
+console.log(
+    formatString(
+      'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+    ),
+  );
