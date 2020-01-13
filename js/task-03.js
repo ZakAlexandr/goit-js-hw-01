@@ -1,4 +1,5 @@
 //task-03
+
 'use strict';
 
 const ADMIN_PASSWORD = 'jqueryismyjam';
