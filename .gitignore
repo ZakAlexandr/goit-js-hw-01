@@ -17,5 +17,6 @@ Gemfile.lock
 /dump/*.tgz
 config/pass_config.yml
 
-homework-04.psd
+*.psd
 *.rar
+.gitignore

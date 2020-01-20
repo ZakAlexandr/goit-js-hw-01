@@ -3,22 +3,15 @@
 
 const credits = 23580;
 const pricePerDroid = 3000;
-let droids = prompt("Сколько дроидов вы хотите купить?");
-let numberDroids = Number(droids);
-const totalPrice = numberDroids * 3000;
 
+let droids = Number(prompt('Какое количество дронов вы хотите купить?'));
 
-if (droids === null){
-   console.log('Отменено пользователем!');
+if (Number.isNaN(droids)) {
+    alert('Вы не ввели корректное число!');
+} else 
+if ((pricePerDroid * droids) <= credits) {
+    alert(`Вы купили ${droids} дроидов, на счету осталось ${credits - (pricePerDroid * droids)} кредитов`);
+} else {
+    alert('Недостаточно средств на счету!');
 }
-else if (numberDroids >= 0) {
-    if(totalPrice > credits){
-        console.log('Недостаточно средств на счету!')
-    }
-    else{
-        console.log(`Вы купили ${numberDroids} дроидов, на счету осталось ${credits - totalPrice} кредитов`);
-    }
-}
-else{
-    console.log('Введите положительное число');
-}
+  

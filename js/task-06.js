@@ -1,15 +1,17 @@
 //task-06
 'use strict';
 
-let input;
 let total = 0;
+let input;
 
-while (true) {
-    input = prompt('Введите число или нажмите отменить для завершения');
-    if (input == null) {
-        break;
-    }
-    total += Number(input);
+do 
+{
+  input = prompt('Введите число!');
+  if (Number.isNaN(Number(input))) {
+    alert(`Введите корректное число!`);
+  } else {
+    total = total + Number(input);
+  }
+} while (input !== null) {
 }
-
-alert(`Общая сумма чисел равна ${total}`);
+alert (`Общая сумма чисел равна ${total}`)
